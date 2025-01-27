@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('link');
-            $table->boolean('haseFreePlan')->default(false);
+            $table->boolean('hasFreePlan')->default(false);
             $table->decimal('price', 5, 2)->nullable();
             $table->timestamps();
         });

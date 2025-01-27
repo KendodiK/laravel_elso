@@ -1,19 +1,19 @@
 @extends('layout')
 
 @section('content')
-<h1>Új Kategória</h1>
 
 @error('name')
 <div class="alert alert-warning">{{$message}}</div>
 @enderror
 
-<form action="{{route('categories.store')}}" method="post">
+<form action="{{route('categories.update', $category->id)}}" method="post">
     @csrf
-    <input>
+    @method('PUT')
     <fieldset>
         <label for="name">Kategória név</label>
-        <input type="text" name="name" id="name"></input>
+        <input type="text" name="name" id="name" value="{{old('name', $category->name)}}">
     </fieldset>
     <button type="submit">Ment</button>
 </form>
+
 @endsection
