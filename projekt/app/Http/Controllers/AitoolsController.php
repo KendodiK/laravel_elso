@@ -54,7 +54,8 @@ class AitoolsController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $aitools = Aitool::find( $id);
+        return view('aitools.show', compact('aitool'));
     }
 
     /**
